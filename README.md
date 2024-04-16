@@ -1,3 +1,2 @@
-# remember-me
-test
-ssssss
+# team 거북이
+2024 내일배움캠프 - NodeJS 과정 미니프로젝트 - 팀소개페이지
