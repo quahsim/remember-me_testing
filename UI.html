@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="c:\Users\82105\AppData\Local\Packages\microsoft.windowscommunicationsapps_8wekyb3d8bbwe\LocalState\Files\S0\4\Attachments\emojimix[12].png"
+    />
+    <title>Remember Me</title>
+    <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+  crossorigin="anonymous"
+/>
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+  rel="stylesheet"
+  crossorigin="anonymous"
+/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 가로 스크롤바 제거 */
+      }
+
+      .section {
+            width: 100vw; 
+            height: 100vh; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+      }
+      .full-page {
+            height: 100vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+      }
+      .scroll-down-button {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            border-radius: 50%;
+            width: 50px; 
+            height: 50px; 
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #547ab1; 
+            border: none; 
+            color: white;
+      }
+      #page2 {
+            position: relative;
+      }
+      
+      .header-image {
+        width: 100%;
+        height: auto; 
+        display: block; 
+      }
+      .header-image-container {
+        position: fixed;
+        width: 100%;
+        display: block;
+        z-index: 1000;
+      }
+      .header-image {
+        width: 100%;
+        height: 150px; 
+        display: block; 
+        object-fit: cover; 
+      }
+      .image-title {
+        position: fixed;
+        top: 10%; 
+        left: 5%; 
+        transform: translateY(-50%); 
+        color: white;
+        font-size: 34px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        padding-left: 20px; 
+      }
+      .content {
+        padding-top: 160px; /* 헤더 높이보다 약간 큰 여백을 추가하여 내용이 헤더에 가려지지 않도록 함 */
+      }
+      .nav-container {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        padding-right: 50px; 
+      }
+
+      .nav-link {
+        color: white; 
+        text-shadow: 1px 1px 2px black; 
+      }
+
+      @import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
+      * {
+        font-family: "Gowun Dodum", sans-serif;
+      }
+
+      body {
+        background-color: rgb(127, 152, 188);
+      }
+
+      .content-section {
+        padding: 20px 40px; 
+        font-size: 16px; 
+        line-height: 1.6; 
+        color: #333; 
+        margin: 20px auto; 
+        max-width: 800px; 
+      }
+
+      .mycards {
+        width: 1200px;
+        margin: 40px auto 20px auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header-image-container">
+      <img
+        src="c:\Users\82105\OneDrive\사진\810061c11586f8bbe79e38d7ff309391.jpg"
+        alt="Header Image"
+        class="header-image"
+      />
+      <div class="image-title">Remember Me</div>
+      <header class="nav-container">
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="#page1" class="nav-link">팀 소개</a></li>
+          <li class="nav-item"><a href="#page2" class="nav-link">팀원 소개</a></li>
+          <li class="nav-item"><a href="#page3" class="nav-link">방명록</a></li>
+        </ul>
+      </header>
+    </div>
+    <section id="page1" class="full-page">
+    <div class="content">
+      <div class="content-section">
+        <p>
+          팀 소개 페이지
+        </p>
+      </div>
+      <a href="#page2" class="btn btn-primary scroll-down-button">
+        <i class="bi bi-arrow-down-circle-fill"></i>
+    </a>
+    </section>
+
+    <section id="page2" class="full-page">
+      <div class="mycards">
+        <div class="row row-cols-1 row-cols-md-5 g-5">
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MTNfMTc5%2FMDAxNjkxOTI0MjAzNzMw.gk5BIUH85HJvevb_ViArhIlIcLdRaOPKJuJjTEBJuUAg.kSGlsHt2w7keY3bjzQzedx29uIFZTNr5wR5I84aka4cg.PNG.chiilog%2F%25B3%25F3%25B4%25E3%25B0%25F5v.png&type=sc960_832"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">송사무엘</h5>
+                <p class="card-text">팀장</p>
+                <div class="text-end">
+                  <a href="#" class="btn btn-secondary">프로필 보기</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MTNfMTc5%2FMDAxNjkxOTI0MjAzNzMw.gk5BIUH85HJvevb_ViArhIlIcLdRaOPKJuJjTEBJuUAg.kSGlsHt2w7keY3bjzQzedx29uIFZTNr5wR5I84aka4cg.PNG.chiilog%2F%25B3%25F3%25B4%25E3%25B0%25F5v.png&type=sc960_832"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">고정훈</h5>
+                <p class="card-text">팀원</p>
+                <div class="text-end">
+                  <a href="#" class="btn btn-secondary">프로필 보기</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MTNfMTc5%2FMDAxNjkxOTI0MjAzNzMw.gk5BIUH85HJvevb_ViArhIlIcLdRaOPKJuJjTEBJuUAg.kSGlsHt2w7keY3bjzQzedx29uIFZTNr5wR5I84aka4cg.PNG.chiilog%2F%25B3%25F3%25B4%25E3%25B0%25F5v.png&type=sc960_832"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">심규아</h5>
+                <p class="card-text">팀원</p>
+                <div class="text-end">
+                  <a href="#" class="btn btn-secondary">프로필 보기</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MTNfMTc5%2FMDAxNjkxOTI0MjAzNzMw.gk5BIUH85HJvevb_ViArhIlIcLdRaOPKJuJjTEBJuUAg.kSGlsHt2w7keY3bjzQzedx29uIFZTNr5wR5I84aka4cg.PNG.chiilog%2F%25B3%25F3%25B4%25E3%25B0%25F5v.png&type=sc960_832"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">정재민</h5>
+                <p class="card-text">팀원</p>
+                <div class="text-end">
+                  <a href="#" class="btn btn-secondary">프로필 보기</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MTNfMTc5%2FMDAxNjkxOTI0MjAzNzMw.gk5BIUH85HJvevb_ViArhIlIcLdRaOPKJuJjTEBJuUAg.kSGlsHt2w7keY3bjzQzedx29uIFZTNr5wR5I84aka4cg.PNG.chiilog%2F%25B3%25F3%25B4%25E3%25B0%25F5v.png&type=sc960_832"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">황정민</h5>
+                <p class="card-text">팀원</p>
+                <div class="text-end">
+                  <a href="#" class="btn btn-secondary">프로필 보기</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#page3" class="btn btn-primary scroll-down-button">
+            <i class="bi bi-arrow-down-circle-fill"></i>
+        </a>
+        </section>
+
+        <section id="page3" class="full-page">
+          <div class="header-image-container">
+              <img src="path-to-your-image.jpg" alt="Header Image" class="header-image">
+          </div>
+          <div class="content">
+              <p>방명록 페이지</p>
+          </div>
+      </section>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
