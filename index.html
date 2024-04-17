@@ -1,407 +1,472 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="ko">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="image/icon.png"
+    />
     <title>Remember Me</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous">
+    </script>
+
     <!-- style.css 연결 -->
     <link rel="stylesheet" href="style.css" />
-    <script type="module" src="script.js"> </script>
-</head>
+    <script type="module" src="script.js"></script>
 
-<body>
-    <!--상단 제목-->
-    <div class="mytitle">
-        <h1>Remember Me</h1>
+  </head>
+
+  <body>
+    <!-- 상단바 -->
+    <div class="header-image-container">
+      <img
+        src="image/header.jpg"
+        alt="Header Image"
+        class="header-image"
+      />
+      <div class="image-title">Remember Me</div>
+      <header class="nav-container">
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="#page1" class="nav-link">팀 소개</a></li>
+          <li class="nav-item"><a href="#page2" class="nav-link">팀원 소개</a></li>
+          <li class="nav-item"><a href="#page3" class="nav-link">방명록</a></li>
+        </ul>
+      </header>
     </div>
-    <!-- 팀 소개-->
-    <div class="myintro">
-        <div class="d-flex">
-            <div class="flex-shrink-0">
-                <img src="image/test.jpeg" width="500" height="500" class="img1" />
+
+    <!-- 팀 소개 페이지 -->
+    <section id="page1" class="full-page">
+      <div class="content-section">
+        <p class="team1">거북이조</p>
+        <P class="team2">전래동화 토끼와 거북이 이야기처럼 노베이스의 15조이지만, 꾸준하고 성실하게 노력하여 완주하고자 하는 마음을 담아 거북이라고 지었습니다.</p>
+        <pre class="team2">팀 약속: 1. TIL은 그날 그날 작성하기!
+        2. 모르는 것에 대해서 최대한 공부해보고 질문한다!
+        3. 결석 및 외출에 대하여 사전에 미리 슬랙 단체 방에 알리기.</pre>
+        <pre class="team4">팀 규칙: 1. 일일 회의는 19시에 진행
+        2. 주간 회의는 금요일 19시 진행</pre>
+         <p class="team5">팀 목표: 모든 팀원들이 낙오 없이 무사히 수료하여 원하는 회사 취업하기!🔥🔥</p>
+      <a href="#page2" class="btn btn-primary scroll-down-button">
+        <i class="bi bi-arrow-down-circle-fill"></i>
+    </a>
+    </section>
+
+    <!-- 프로필 페이지 -->
+    <section id="page2" class="full-page">
+      <div class="mycards">
+        <div class="row row-cols-1 row-cols-md-5 g-5">
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="image/ss1.jpeg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">송사무엘</h5>
+                <p class="card-text">팀장</p>
+                  <div class="text-end">
+                    <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#detailModal1">프로필 보기</a>
+                  </div>
+              </div>
             </div>
-            <div class="d-flex-padding"></div>
-            <div class="flex-intro">
-                <div class="flex-grow-1 ms-4">
-                    <div class="bor0"></div>
-                    <div class="bor1">
-                        <p class="p1">팀 이름 : 거북이</p>
-                        <br>
-                    </div>
-                    <div class="bor2">
-                        <div class="bor2-title">
-                            <p class="p1">팀 소개 : </p>
-                        </div>
-                        <div class="bor-padding"></div>
-                        <div class="bor2-text">
-                            <p class="p2">전래동화 토끼와 거북이 이야기처럼 노베이스의 15조지만</p>
-                            <p class="p2">꾸준하고 성실하게 노력하여 완주하고자 하는 마음을 담아 </p>
-                            <p class="p2">거북이라고 지었습니다.</p>
-                        </div>
-                    </div>
-                    <div class="bor3">
-                        <div class="bor3-title">
-                            <p class="p1">팀 목표 : </p>
-                        </div>
-                        <div class="bor-padding"></div>
-                        <div class="bor3-text">
-                            <p class="p2">모든 조원들이 낙오 없이 무사히 수료하여 원하는 회사 취업하기!</p>
-                        </div>
-                    </div>
-                    <div class="bor4">
-                        <div class="bor4-title">
-                            <p class="p1">팀 약속 :</p>
-                        </div>
-                        <div class="bor-padding"></div>
-                        <div class="bor4-text">
-                            <p class="p2">1. TIL 그날 그날 작성하기</p>
-                            <p class="p2">2. 모르는 지식은 스스로 공부해보고 질문하기</p>
-                            <p class="p2">3. 결석 및 이동 시 슬랙 방에 공지하기</p>
-                        </div>
-                    </div>
-                    <div class="bor5">
-                        <div class="bor5-title">
-                            <p class="p1">팀 규칙 :</p>
-                        </div>
-                        <div class="bor-padding"></div>
-                        <div class="bor5-text">
-                            <p class="p2">1. 일일 회의는 19시에 진행</p>
-                            <p class="p2">2. 주간 회의는 금요일 19시 진행</p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="image/kjh1.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">고정훈</h5>
+                <p class="card-text">팀원</p>
+                  <div class="text-end">
+                    <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#detailModal2">프로필 보기</a>
+                  </div>
+              </div>
             </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="image/sqa1.jpeg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">심규아</h5>
+                <p class="card-text">팀원</p>
+                  <div class="text-end">
+                    <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#detailModal3">프로필 보기</a>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="image/jjm1.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">정재민</h5>
+                <p class="card-text">팀원</p>
+                  <div class="text-end">
+                    <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#detailModal4">프로필 보기</a>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="image/him1.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">황정민</h5>
+                <p class="card-text">팀원</p>
+                  <div class="text-end">
+                    <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#detailModal5">프로필 보기</a>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <a href="#page3" class="btn btn-primary scroll-down-button">
+            <i class="bi bi-arrow-down-circle-fill"></i>
+          </a>
         </div>
-    </div>
-    <!--팀원 소개-->
-    <div class="mycards">
-        <div class="row row-cols-1 row-cols-md-5 g-4">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/test.jpeg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">송사무엘</h5>
-                        <p class="card-text">팀장</p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#detailModal1">
-                            자세히
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/test.jpeg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">심규아</h5>
-                        <p class="card-text">팀원</p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#detailModal2">
-                            자세히
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/test.jpeg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">황정민</h5>
-                        <p class="card-text">팀원</p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#detailModal3">
-                            자세히
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/test.jpeg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">고정훈</h5>
-                        <p class="card-text">팀원</p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#detailModal4">
-                            자세히
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/test.jpeg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">정재민</h5>
-                        <p class="card-text">팀원</p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#detailModal5">
-                            자세히
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- 카드 -->
-            <!-- 모달 시작-->
-            <div class="modal fade" id="detailModal1" tabindex="-1" aria-labelledby="detailModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="detailModalLabel">송사무엘</h5>
-                        </div>
-                        <div class="modal-info">
-                            <div class="modal-img-area">
-                                <img src="image/test.jpeg">
-                            </div>
-                            <div class="modal-card">
-                                <p class="mbti">ENFP</p>
-                                <p class="position">팀장</p>
-                            </div>
-                        </div>
-                        <div class="modal-body">
-                            <p class="body-title">좌우명</p>
-                            <p class="body-text">강하고 담대하라.</p>
-                            <p class="body-title">좋아하는 것과 취미</p>
-                            <p class="body-text">저는 운동과 책 읽는 것을 좋아하고 현재 헬스와 런닝에</p>
-                            <p class="body-text">취미를 붙였습니다. 개인적으로 자연과 역사 관련 다큐멘터리를</p>
-                            <p class="body-text">좋아하면 사진 찍는 것에도 흥미가 있습니다.</p>
-                            <p class="body-title">나의장점</p>
-                            <p class="body-text">밝고 긍정적이다!</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" id="detailModal2" tabindex="-1" aria-labelledby="detailModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="detailModalLabel">심규아</h5>
-                        </div>
-                        <div class="modal-info">
-                            <div class="modal-img-area">
-                                <img src="image/test.jpeg">
-                            </div>
-                            <div class="modal-card">
-                                <p class="mbti">ISFP</p>
-                                <p class="position">팀원</p>
-                            </div>
-                        </div>
-                        <div class="modal-body">
-                            <p class="body-title">좌우명</p>
-                            <p class="body-text">If nothing goes right, go left. </p>
-                            <p class="body-title">좋아하는 것과 취미</p>
-                            <p class="body-text">침대에 누워서 넷플릭스 보는것과 보드게임을 좋아합니다!</p>
-                            <p class="body-text">요즘에 요리하는게 재미를 붙였습니다..ㅎㅎ</p>
-                            <p class="body-title">나의장점</p>
-                            <p class="body-text">성실하다!</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" id="detailModal3" tabindex="-1" aria-labelledby="detailModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="detailModalLabel">황정민</h5>
-                        </div>
-                        <div class="modal-info">
-                            <div class="modal-img-area">
-                                <img src="image/test.jpeg">
-                            </div>
-                            <div class="modal-card">
-                                <p class="mbti">ISTP</p>
-                                <p class="position">팀원</p>
-                            </div>
-                        </div>
-                        <div class="modal-body">
-                            <p class="body-title">좌우명</p>
-                            <p class="body-text">이 또한 지나가리</p>
-                            <p class="body-title">좋아하는 것과 취미</p>
-                            <p class="body-text">저는 여러 장르의 노래를 듣는 것을 좋아하고 </p>
-                            <p class="body-text">새로운 노래를 찾는 것을 좋아합니다.</p>
-                            <p class="body-text">공포 장르를 좋아해서 관련된 영화, 방탈출, 게임 등을 즐겨 합니다! </p>
-                            <p class="body-text">그래도 제일 좋아하는 것은 침대에 가만히 누워있는 것입니다!!</p>
-                            <p class="body-title">나의장점</p>
-                            <p class="body-text">앞과 뒤가 같으며 약속을 잘 지킵니다.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" id="detailModal4" tabindex="-1" aria-labelledby="detailModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="detailModalLabel">고정훈</h5>
-                        </div>
-                        <div class="modal-info">
-                            <div class="modal-img-area">
-                                <img src="image/test.jpeg">
-                            </div>
-                            <div class="modal-card">
-                                <p class="mbti">ISTJ</p>
-                                <p class="position">팀원</p>
-                            </div>
-                        </div>
-                        <div class="modal-body">
-                            <p class="body-title">좌우명</p>
-                            <p class="body-text">모르면 알때까지</p>
-                            <p class="body-title">좋아하는 것과 취미</p>
-                            <p class="body-text">저는 평소에 게임을 좋아하고 영상 편집, 쇼츠 제작을 즐겨했습니다. </p>
-                            <p class="body-text">그리고 가끔 몸이 찌뿌둥하면 산책을 나갑니다.</p>
-                            <p class="body-text">좋하지만 극히 희박한 확률입니다.</p>
-                            <p class="body-title">나의장점</p>
-                            <p class="body-text">순도 100% T성향이라 문제가 생기면 해결책부터 생각합니다.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" id="detailModal5" tabindex="-1" aria-labelledby="detailModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="detailModalLabel">정재민</h5>
-                        </div>
-                        <div class="modal-info">
-                            <div class="modal-img-area">
-                                <img src="image/test.jpeg">
-                            </div>
-                            <div class="modal-card">
-                                <p class="mbti">ESTJ</p>
-                                <p class="position">팀원</p>
-                            </div>
-                        </div>
-                        <div class="modal-body">
-                            <p class="body-title">좌우명</p>
-                            <p class="body-text">인생은 박명수처럼</p>
-                            <p class="body-title">좋아하는 것과 취미</p>
-                            <p class="body-text">유튜브를 보면서 알아두면 쓸대없는 정보들을 알아두는 것을 좋아합니다.</p>
-                            <p class="body-text"> 토크 할때 풀기가 좋아요. 취미는 콘솔게임입니다.</p>
-                            <p class="body-text">취미인 이유는 제가 잘하지는 않는데.. 재미있어서요</p>
-                            <p class="body-title">나의장점</p>
-                            <p class="body-text">하루종일도 떠들수있다.(소통원할)</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--방명록 작성-->
-    <div class="mypostinbox">
-        <h2>방명록</h2>
-        <div class="form-floating mb-2">
+      </div>
+    </section>
+
+    <!-- 방명록 페이지 -->
+    <section id="page3" class="full-page">
+      <div class="content">
+      <div class="mypostinbox">
+        <h2 class="guestbook-title">🐢방명록</h2>
+        <div class="form-floating">
             <input type="email" class="form-control" id="email" placeholder="이메일">
             <label for="email">슬랙 또는 Zep 이름</label>
         </div>
-        <div class="form-floating mb-3">
+        <div class="form-floating">
             <input type="password" class="form-control" id="password" placeholder="비밀번호">
-            <label for="password">비밀번호(방명록 수정 시 사용됩니다.)</label>
+            <label for="password">비밀번호(방명록 수정 및 삭제 시 사용됩니다.)</label>
         </div>
-        <div class="form-floating mb-4">
+        <div class="form-floating">
             <input type="email" class="form-control" id="content" placeholder="내용">
             <label for="content">방명록(부담없이 적어주세요(*ˊᵕˋ*)ﾉ)</label>
         </div>
         <div class="btn-box">
-            <button id="postinbtn" type="button" class="btn btn-primary">입력</button>
-            <button id="resetbtn" type="button" class="btn btn-danger">초기화</button>
+            <button id="resetbtn" type="button" class="btn btn-secondary">초기화</button>
+            <button id="postinbtn" type="button" class="btn btn-success">입력</button>
         </div>
     </div>
     <!-- 방명록 목록 -->
     <div class="postingcard">
-        <!-- 여기에 각 방명록 항목이 동적으로 추가됩니다. -->
+      <!-- 여기에 각 방명록 항목이 동적으로 추가됩니다. -->
     </div>
 
     <!-- 삭제 모달 -->
-    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel">방명록 삭제</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>정말로 이 방명록을 삭제하시겠습니까?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-                    <button id="confirmDeleteBtn" type="button" class="btn btn-danger">삭제</button>
-                </div>
-            </div>
+    <div
+      class="modal fade"
+      id="deleteModal"
+      tabindex="-1"
+      aria-labelledby="deleteModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">삭제</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>정말로 이 방명록을 삭제하시겠습니까?</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              취소
+            </button>
+            <button id="confirmDeleteBtn" type="button" class="btn btn-danger">
+              삭제
+            </button>
+          </div>
         </div>
+      </div>
     </div>
     <!-- 수정 모달 -->
-    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editModalLabel">방명록 수정</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="editContent" class="form-label">내용</label>
-                        <textarea class="form-control" id="editContent" rows="3"></textarea>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-                    <button id="confirmEditBtn" type="button" class="btn btn-primary">수정</button>
-                </div>
+    <div
+      class="modal fade"
+      id="editModal"
+      tabindex="-1"
+      aria-labelledby="editModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">수정</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="editContent" class="form-label">내용</label>
+              <textarea
+                class="form-control"
+                id="editContent"
+                rows="3"
+              ></textarea>
             </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              취소
+            </button>
+            <button id="confirmEditBtn" type="button" class="btn btn-primary">
+              수정
+            </button>
+          </div>
         </div>
+      </div>
     </div>
     <!-- 비밀번호 입력 모달 -->
-    <div class="modal fade" id="passwordModal" tabindex="-1" aria-labelledby="passwordModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="passwordModalLabel">비밀번호 확인</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div
+      class="modal fade"
+      id="passwordModal"
+      tabindex="-1"
+      aria-labelledby="passwordModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="passwordModalLabel">비밀번호 확인</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="passwordInput" class="form-label"
+                >비밀번호 입력</label
+              >
+              <input type="password" class="form-control" id="passwordInput" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              취소
+            </button>
+            <button
+              id="confirmPasswordBtn"
+              type="button"
+              class="btn btn-primary"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </section>
+
+    <!-- 모달창 프로필 -->
+    <div class="modal fade" id="detailModal1" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="detailModalLabel">송사무엘</h5>
+              </div>
+              <div class="modal-info">
+                  <div class="modal-img-area">
+                      <img src="image/ss2.jpg">
+                  </div>
+                  <div class="modal-card">
+                      <p class="mbti">ENFP</p>
+                      <p class="position">팀장</p>
+                  </div>
+              </div>
+              <div class="modal-body">
+                  <p class="body-title">좌우명</p>
+                  <p class="body-text">강하고 담대하라.</p>
+                  <p class="body-title">좋아하는 것과 취미</p>
+                  <p class="body-text">저는 운동과 책 읽는 것을 좋아하고 현재 헬스와 런닝에 취미를 붙였습니다.</p> 
+                  <p class="body-text">개인적으로 자연과 역사 관련 다큐멘터리를 좋아하며 사진 찍는 것에도 흥미가 있습니다.</p>
+                      <p class="body-title">나의 장점</p>
+                      <p class="body-text">밝고 긍정적이다!</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="modal fade" id="detailModal2" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailModalLabel">고정훈</h5>
+            </div>
+            <div class="modal-info">
+                <div class="modal-img-area">
+                    <img src="image/kjh2.jpg">
                 </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="passwordInput" class="form-label">비밀번호 입력</label>
-                        <input type="password" class="form-control" id="passwordInput">
-                    </div>
+                <div class="modal-card">
+                    <p class="mbti">ISTJ</p>
+                    <p class="position">팀원</p>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-                    <button id="confirmPasswordBtn" type="button" class="btn btn-primary">확인</button>
-                </div>
+            </div>
+            <div class="modal-body">
+                <p class="body-title">좌우명</p>
+                <p class="body-text">모르면 알때까지</p>
+                <p class="body-title">좋아하는 것과 취미</p>
+                <p class="body-text">저는 평소에 게임을 좋아하고 영상 편집, 쇼츠 제작을 즐겨했습니다. </p> 
+                <p class="body-text">그리고 가끔 몸이 찌뿌둥하면 산책을 나갑니다.</p>
+                <p class="body-text">좋아하지만 극히 희박한 확률입니다.</p>
+                <p class="body-title">나의 장점</p>
+                <p class="body-text">순도 100% T성향이라 문제가 생기면 해결책부터 생각합니다.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
-
-    <!-- 수정 버튼
-    <button class="edit-btn btn btn-warning" data-doc-id="${docId}" data-bs-toggle="modal"
-        data-bs-target="#editModal">수정</button> -->
-
-</body>
-
+</div>
+<div class="modal fade" id="detailModal3" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="detailModalLabel">심규아</h5>
+          </div>
+          <div class="modal-info">
+              <div class="modal-img-area">
+                  <img src="image/sqa2.jpeg">
+              </div>
+              <div class="modal-card">
+                  <p class="mbti">ISFP</p>
+                  <p class="position">팀원</p>
+              </div>
+          </div>
+          <div class="modal-body">
+              <p class="body-title">좌우명</p>
+              <p class="body-text">If nothing goes right, go left. </p>
+              <p class="body-title">좋아하는 것과 취미</p>
+              <p class="body-text">침대에 누워서 넷플릭스 보는것과 보드게임을 좋아합니다!</p> 
+              <p class="body-text">요즘에 요리하는게 재미를 붙였습니다..ㅎㅎ</p>
+              <p class="body-title">나의 장점</p>
+              <p class="body-text">성실하다!</p>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="modal fade" id="detailModal4" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="detailModalLabel">정재민</h5>
+          </div>
+          <div class="modal-info">
+              <div class="modal-img-area">
+                  <img src="image/jjm2.jpg">
+              </div>
+              <div class="modal-card">
+                  <p class="mbti">ESTJ</p>
+                  <p class="position">팀원</p>
+              </div>
+          </div>
+          <div class="modal-body">
+              <p class="body-title">좌우명</p>
+              <p class="body-text">인생은 박명수처럼</p>
+              <p class="body-title">좋아하는 것과 취미</p>
+              <p class="body-text">유튜브를 보면서 알아두면 쓸대없는 정보들을 알아두는 것을 좋아합니다.</p> 
+              <p class="body-text"> 토크 할때 풀기가 좋아요. 취미는 콘솔게임입니다.</p>
+              <p class="body-text">취미인 이유는 제가 잘하지는 않는데.. 재미있어서요</p>
+              <p class="body-title">나의 장점</p>
+              <p class="body-text">하루종일도 떠들수있다. (소통원할)</p>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="modal fade" id="detailModal5" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="detailModalLabel">황정민</h5>
+          </div>
+          <div class="modal-info">
+              <div class="modal-img-area">
+                  <img src="image/hjm2.jpg">
+              </div>
+              <div class="modal-card">
+                  <p class="mbti">ISTP</p>
+                  <p class="position">팀원</p>
+              </div>
+          </div>
+          <div class="modal-body">
+              <p class="body-title">좌우명</p>
+              <p class="body-text"> 이 또한 지나가리</p>
+              <p class="body-title">좋아하는 것과 취미</p>
+              <p class="body-text"> 저는 여러 장르의 노래를 듣는 것을 좋아하고 그 중에서도 락밴드 음악을 가장 좋아합니다.</p>
+              <p class="body-text"> 공포 장르를 좋아해서 관련된 영화, 방탈출, 게임 등을 즐겨 합니다! </p>
+              <p class="body-text"> 그래도 제일 좋아하는 것은 침대에 가만히 누워있는 것입니다!!</p>
+              <p class="body-title">나의 장점</p>
+              <p class="body-text"> 앞과 뒤가 같으며 약속을 잘 지킵니다.</p>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+      </div>
+  </div>
+</div>
+  </body>
 </html>
