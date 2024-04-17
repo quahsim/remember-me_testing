@@ -52,76 +52,98 @@ async function loadDocs() {
         $(".postingcard").append(temp_html);
     });
 
-    // 삭제 버튼 이벤트 (동적 추가)
-    $(".delete-btn").click(async function () {
+    // 삭제 버튼 클릭 이벤트
+    $(".delete-btn").click(function () {
         // 클릭된 삭제 버튼의 문서 ID 가져오기
         const docId = $(this).data('doc-id');
 
-        try {
-            // Firestore에서 해당 문서 참조 가져오기
-            // const docRef = firebase.firestore().doc(`rememberme/${docId}`);
+        // 비밀번호 입력 모달 보이기
+        $("#passwordModal").modal('show');
 
-            // 해당 문서 삭제
-            await deleteDoc(doc(db, "rememberme", docId));
-            // 삭제되면 화면에서 제거
-            $(this).closest('.card-entry').remove();
-            alert("삭제 완료");
-        } catch (error) {
-            console.error("삭제 오류", error);
-        }
+        // 확인 버튼 클릭 이벤트
+        $("#confirmPasswordBtn").off('click').on('click', async function () {
+            // 입력된 비밀번호 가져오기
+            const password = $("#passwordInput").val();
+
+            try {
+                // 해당 문서의 데이터 가져오기
+                const docSnapshot = await getDoc(doc(db, "rememberme", docId));
+                const data = docSnapshot.data();
+
+                // 입력된 비밀번호와 문서의 비밀번호 확인
+                if (password !== data.password) {
+                    alert("비밀번호가 일치하지 않습니다.");
+                    return;
+                }
+
+                // 비밀번호 입력 모달 닫기
+                $("#passwordModal").modal('hide');
+
+                // 해당 문서 삭제
+                await deleteDoc(doc(db, "rememberme", docId));
+                // 삭제되면 화면에서 제거
+                $(`.delete-btn[data-doc-id="${docId}"]`).closest('.card-entry').remove();
+
+                alert("삭제 완료");
+            } catch (error) {
+                console.error("삭제 오류", error);
+            }
+        });
     });
+
+
 
     // 수정 버튼 클릭 이벤트 (동적 추가)
     $(".edit-btn").click(async function () {
         // 클릭된 수정 버튼의 문서 ID 가져오기
         const docId = $(this).data('doc-id');
-    
+
         try {
             // 비밀번호 입력 모달 보이기
             $("#passwordModal").modal('show');
-    
+
             // 확인 버튼 클릭 이벤트
             $("#confirmPasswordBtn").off().click(async function () {
                 // 입력된 비밀번호 가져오기
                 const password = $("#passwordInput").val();
-    
+
                 try {
                     // 해당 문서의 데이터 가져오기
                     const docSnapshot = await getDoc(doc(db, "rememberme", docId));
                     const data = docSnapshot.data();
-    
+
                     // 입력된 비밀번호와 문서의 비밀번호 확인
                     if (password !== data.password) {
                         alert("비밀번호가 일치하지 않습니다.");
                         return;
                     }
-    
+
                     // 비밀번호 입력 모달 닫기
                     $("#passwordModal").modal('hide');
-    
+
                     // 수정 모달 보이기
                     $("#editModal").modal('show');
-    
+
                     // 수정 완료 버튼 클릭 이벤트
                     $("#confirmEditBtn").off().click(async function () {
                         // 수정된 내용 가져오기
                         const editedContent = $("#editContent").val();
-    
+
                         // 내용이 비어있는지 확인
                         if (!editedContent.trim()) {
                             alert("내용을 입력해주세요.");
                             return;
                         }
-    
+
                         try {
                             // 해당 문서 업데이트
                             await updateDoc(doc(db, "rememberme", docId), {
                                 content: editedContent
                             });
-    
+
                             // 화면 업데이트
                             $(`.card-entry[data-doc-id="${docId}"] .card-text`).text(`내용 : ${editedContent}`);
-    
+
                             // 수정 모달 닫기
                             $("#editModal").modal('hide');
                             alert("수정 완료");
@@ -137,7 +159,7 @@ async function loadDocs() {
             console.error("수정 오류", error);
         }
     });
-    
+
 }
 
 loadDocs();
