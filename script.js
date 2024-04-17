@@ -4,15 +4,15 @@ import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc, updateDoc, g
 
 // Firebase 구성 정보 설정   
 const firebaseConfig = {
-    //개인 파이어베이스 설정정보 고정훈으로 수정
-    apiKey: "AIzaSyA5VGUfa7TZ1i5TmLvTLwVLIgZLKLUppyY",
-    authDomain: "remember-me-3b62b.firebaseapp.com",
-    projectId: "remember-me-3b62b",
-    storageBucket: "remember-me-3b62b.appspot.com",
-    messagingSenderId: "83160005134",
-    appId: "1:83160005134:web:226babc85b41b1e0ccda5f",
-    measurementId: "G-2LT67NQRMD"
-};
+    //개인 파이어베이스 설정정보 심규아로 수정
+    apiKey: "AIzaSyCNlqEQIGm9ofoSst6SRhgOYB1j_2XhP2o",
+    authDomain: "rememberme-d05ca.firebaseapp.com",
+    projectId: "rememberme-d05ca",
+    storageBucket: "rememberme-d05ca.appspot.com",
+    messagingSenderId: "344171655552",
+    appId: "1:344171655552:web:ea7aeaaf8fef2b9c9e9165",
+    measurementId: "G-P3TZ5EQVKJ"
+  };
 
 // Firebase 인스턴스 초기화
 const app = initializeApp(firebaseConfig);
