@@ -44,6 +44,7 @@ $("#postinbtn").click(async function () {
     window.location.reload();
   } else {
     alert("ZEP 아이디, 비밀번호, 방명록 작성해주세요")
+    window.location.reload();
   }
 });
 
