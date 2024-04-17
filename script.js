@@ -33,14 +33,18 @@ $("#postinbtn").click(async function () {
   let password = $("#password").val();
   let content = $("#content").val();
 
-  let doc = {
-    email: email,
-    password: password,
-    content: content,
-  };
-  await addDoc(collection(db, "rememberme"), doc);
-  alert("저장 완료");
-  window.location.reload();
+  if (email && password && content) {
+    let doc = {
+      email: email,
+      password: password,
+      content: content,
+    };
+    await addDoc(collection(db, "rememberme"), doc);
+    alert("저장 완료");
+    window.location.reload();
+  } else {
+    alert("ZEP 아이디, 비밀번호, 방명록 작성해주세요")
+  }
 });
 
 // 방명록 목록 불러오기
