@@ -39,7 +39,7 @@ $("#postinbtn").click(async function () {
   if (email && password && content) {
     // 정규식 이메일 확인 
     if (!emailRegex.test(email)) {
-      alert("이메일 주소를 확인해주세요.");
+      alert("아이디는 14문자이내로 작성해주세요.");
       return;
     }
 
