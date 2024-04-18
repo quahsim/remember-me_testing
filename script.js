@@ -34,10 +34,10 @@ $("#postinbtn").click(async function () {
   let content = $("#content").val();
   
   //정규식 이메일 
-  let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let emailRegex = /^[a-zA-Z0-9ㄱ-ㅎ가-힣!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~]{1,14}$/;
 
   if (email && password && content) {
-    // 정규식 이메일 확인
+    // 정규식 이메일 확인 
     if (!emailRegex.test(email)) {
       alert("이메일 주소를 확인해주세요.");
       return;
