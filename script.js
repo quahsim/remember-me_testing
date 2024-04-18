@@ -40,7 +40,7 @@ $("#postinbtn").click(async function () {
     // 정규식 이메일 확인 
     if (!emailRegex.test(email)) {
       alert("아이디는 14문자이내로 작성해주세요.");
-      return;
+      window.location.reload();
     }
 
     let doc = {
